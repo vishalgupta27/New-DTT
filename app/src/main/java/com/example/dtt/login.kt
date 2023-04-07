@@ -160,7 +160,7 @@ class login : AppCompatActivity() {
                             Toast.makeText(this@login, "Logged in Successfully!", Toast.LENGTH_SHORT).show()
                         }
                         else {
-                            Toast.makeText(this@login, "Please enter and password", Toast.LENGTH_SHORT).show()}
+                            Toast.makeText(this@login, "Enter correct Email and Password", Toast.LENGTH_SHORT).show()}
 
                     }
                 }

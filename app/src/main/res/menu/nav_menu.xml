@@ -12,7 +12,12 @@
         android:icon="@drawable/ic_baseline_logout_24">
     </item>
     <item
-        android:id="@+id/item3_Settings"
+        android:id="@+id/item3_locations"
+        android:title="Location"
+        android:icon="@drawable/ic_baseline_add_location_24">
+    </item>
+    <item
+        android:id="@+id/item4_Settings"
         android:title="Settings"
         android:icon="@drawable/ic_baseline_settings_24">
     </item>

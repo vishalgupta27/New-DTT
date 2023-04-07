@@ -41,12 +41,17 @@ class MainActivity : AppCompatActivity() {
                     true
                 }
                 R.id.item2_Logout -> {
-                    Toast.makeText(this, "Click Logout", Toast.LENGTH_SHORT).show()
+                    val logout = Intent(this,login::class.java)
+                    startActivity(logout)
                     true
                 }
-                R.id.item3_Settings -> {
+                R.id.item3_locations -> {
                     val intent = Intent(this, MapsActivity::class.java)
                     startActivity(intent)
+                    true
+                }
+                R.id.item4_Settings -> {
+                    Toast.makeText(this, "Click Settings", Toast.LENGTH_SHORT).show()
                     true
                 }
                 else -> {
