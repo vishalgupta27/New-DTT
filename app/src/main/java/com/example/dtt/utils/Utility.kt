@@ -14,11 +14,13 @@ import android.os.Environment
 import android.provider.DocumentsContract
 import android.provider.MediaStore
 import android.util.Log
+import android.widget.Toast
 
 import com.android.volley.DefaultRetryPolicy
 import com.android.volley.toolbox.StringRequest
 import com.android.volley.toolbox.Volley
 import com.example.albums.utils.Constants.Companion.SERVER_TIMEOUT_TIME
+import com.example.dtt.R
 
 import java.lang.reflect.Method
 
@@ -86,9 +88,8 @@ object Utility {
     }
 
     fun isValidPassword(password: String?): Boolean {
-
         val passwordPatterns = "^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&+=])(?=\\S+$).{4,}$"
-       val pattern = Pattern.compile(passwordPatterns)
+        val pattern = Pattern.compile(passwordPatterns)
         val matcher: Matcher = pattern.matcher(password)
         return matcher.matches()
     }
@@ -106,6 +107,26 @@ object Utility {
         val buttonbackground1 = dialog.getButton(DialogInterface.BUTTON_POSITIVE)
         buttonbackground1.setTextColor(Color.RED)
     }
+
+     fun showAlertDialog(context: Context) {
+        val alertDialogBuilder = androidx.appcompat.app.AlertDialog.Builder(context)
+        alertDialogBuilder.setTitle("Alert Dialog")
+        alertDialogBuilder.setCancelable(false)
+        alertDialogBuilder.setMessage("This is an example of AlertDialog in Kotlin.")
+        alertDialogBuilder.setPositiveButton("OK", DialogInterface.OnClickListener { dialog, which ->
+            // Do something when OK button is clicked
+            Toast.makeText(context, "Exit", Toast.LENGTH_SHORT).show()
+            dialog.dismiss()
+        })
+        alertDialogBuilder.setNegativeButton("Cancel", DialogInterface.OnClickListener { dialog, which ->
+            // Do something when Cancel button is clicked
+            dialog.dismiss()
+        })
+        alertDialogBuilder.show()
+    }
+
+
+
 
     fun getPathFromUri(context: Context, uri: Uri): String? {
         val isKitKat = Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT

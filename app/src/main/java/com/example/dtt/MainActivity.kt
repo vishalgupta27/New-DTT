@@ -51,6 +51,8 @@ class MainActivity : AppCompatActivity() {
                     true
                 }
                 R.id.item4_Settings -> {
+                    val ui = Intent (this,Andriod_UI_Widget::class.java)
+                        startActivity(ui)
                     Toast.makeText(this, "Click Settings", Toast.LENGTH_SHORT).show()
                     true
                 }
