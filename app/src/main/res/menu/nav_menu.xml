@@ -17,9 +17,19 @@
         android:icon="@drawable/ic_baseline_add_location_24">
     </item>
     <item
-        android:id="@+id/item4_Settings"
-        android:title="Settings"
+        android:id="@+id/item4_UIWidgets"
+        android:title="UIWidgets"
         android:icon="@drawable/ic_baseline_settings_24">
+    </item>
+    <item
+        android:id="@+id/item5_Animations"
+        android:title="Animations"
+        android:icon="@drawable/ic_baseline_animation_24">
+    </item>
+    <item
+        android:id="@+id/item6_Settings"
+        android:title="Profile"
+        android:icon="@drawable/ic_baseline_person_24">
     </item>
 
 

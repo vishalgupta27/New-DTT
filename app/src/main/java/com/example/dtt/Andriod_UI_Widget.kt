@@ -44,7 +44,6 @@ class Andriod_UI_Widget : AppCompatActivity() {
 
         // Set spinner width to match_parent
         spinner.layoutParams.width = ViewGroup.LayoutParams.MATCH_PARENT
-
         // Set up item selected listener
         spinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
             override fun onItemSelected(

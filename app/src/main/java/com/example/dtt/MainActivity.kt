@@ -2,7 +2,6 @@ package com.example.dtt
 
 import android.content.Intent
 import android.os.Bundle
-import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.app.AppCompatActivity
@@ -50,9 +49,20 @@ class MainActivity : AppCompatActivity() {
                     startActivity(intent)
                     true
                 }
-                R.id.item4_Settings -> {
+                R.id.item4_UIWidgets -> {
                     val ui = Intent (this,Andriod_UI_Widget::class.java)
                         startActivity(ui)
+                    Toast.makeText(this, "Click Settings", Toast.LENGTH_SHORT).show()
+                    true
+                }
+                R.id.item5_Animations-> {
+                    val anim = Intent (this,AnimationWithOthers::class.java)
+                    startActivity(anim)
+                    true
+                }
+                R.id.item6_Settings-> {
+                    val intent = Intent(this,ImagesSwitchers::class.java)
+                    startActivity(intent)
                     Toast.makeText(this, "Click Settings", Toast.LENGTH_SHORT).show()
                     true
                 }
