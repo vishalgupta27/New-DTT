@@ -63,7 +63,16 @@ class MainActivity : AppCompatActivity() {
                 R.id.item6_Settings-> {
                     val intent = Intent(this,ImagesSwitchers::class.java)
                     startActivity(intent)
-                    Toast.makeText(this, "Click Settings", Toast.LENGTH_SHORT).show()
+                    true
+                }
+                R.id.item7_AudioCapture-> {
+                    val intent = Intent(this,AudioCaptures::class.java)
+                    startActivity(intent)
+                    true
+                }
+                R.id.item8_Bluetooth-> {
+                    val intent = Intent(this,BluetoothCheck::class.java)
+                    startActivity(intent)
                     true
                 }
                 else -> {

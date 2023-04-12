@@ -1,14 +1,17 @@
 package com.example.dtt
+
 import android.Manifest.permission
 import android.content.pm.PackageManager
 import android.media.MediaPlayer
 import android.media.MediaRecorder
+import android.os.Build
 import android.os.Bundle
 import android.os.Environment
 import android.util.Log
 import android.view.View
 import android.widget.TextView
 import android.widget.Toast
+import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
@@ -23,11 +26,19 @@ class AudioCaptures : AppCompatActivity() {
     private var statusTV: TextView? = null
 
     // creating a variable for media recorder object class.
-    private var mRecorder: MediaRecorder? = null
+    private lateinit var mRecorder: MediaRecorder
 
     // creating a variable for mediaplayer class
     private var mPlayer: MediaPlayer? = null
 
+        // string variable is created for storing a file name
+        private var mFileName: String? = null
+
+        // constant for storing audio permission
+         val REQUEST_AUDIO_PERMISSION_CODE = 1
+
+
+    @RequiresApi(Build.VERSION_CODES.S)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.audiorecrod)
@@ -41,7 +52,7 @@ class AudioCaptures : AppCompatActivity() {
         stopTV!!.setBackgroundColor(resources.getColor(R.color.gray))
         playTV!!.setBackgroundColor(resources.getColor(R.color.gray))
         stopplayTV!!.setBackgroundColor(resources.getColor(R.color.gray))
-        startTV!!.setOnClickListener  { // start recording method will
+        startTV!!.setOnClickListener { // start recording method will
             // start the recording of audio.
             startRecording()
         }
@@ -59,60 +70,48 @@ class AudioCaptures : AppCompatActivity() {
         })
     }
 
-    private fun startRecording() {
-        // check permission method is used to check
-        // that the user has granted permission
-        // to record and store the audio.
-        if (CheckPermissions()) {
 
-            // setbackgroundcolor method will change
-            // the background color of text view.
-            stopTV!!.setBackgroundColor(resources.getColor(R.color.purple_200))
-            startTV!!.setBackgroundColor(resources.getColor(R.color.gray))
-            playTV!!.setBackgroundColor(resources.getColor(R.color.gray))
-            stopplayTV!!.setBackgroundColor(resources.getColor(R.color.gray))
+    @RequiresApi(Build.VERSION_CODES.S)
+    private fun startRecording() = if (CheckPermissions()) {
+        stopTV!!.setBackgroundColor(resources.getColor(R.color.purple_200))
+        startTV!!.setBackgroundColor(resources.getColor(R.color.gray))
+        playTV!!.setBackgroundColor(resources.getColor(R.color.gray))
+        stopplayTV!!.setBackgroundColor(resources.getColor(R.color.gray))
 
-            // we are here initializing our filename variable
-            // with the path of the recorded audio file.
-            mFileName = Environment.getExternalStorageDirectory().absolutePath
-            mFileName += "/AudioRecording.3gp"
+        mFileName = Environment.getExternalStorageDirectory().absolutePath
+        mFileName += "/AudioRecording.3gp"
 
-            // below method is used to initialize
-            // the media recorder class
-            mRecorder = MediaRecorder()
+        // below method is used to initialize
+        // the media recorder class
 
-            // below method is used to set the audio
-            // source which we are using a mic.
-            mRecorder!!.setAudioSource(MediaRecorder.AudioSource.MIC)
 
-            // below method is used to set
-            // the output format of the audio.
-            mRecorder!!.setOutputFormat(MediaRecorder.OutputFormat.THREE_GPP)
+        mRecorder = MediaRecorder(this@AudioCaptures)
 
-            // below method is used to set the
-            // audio encoder for our recorded audio.
-            mRecorder!!.setAudioEncoder(MediaRecorder.AudioEncoder.AMR_NB)
+        // below method is used to set the audio
+        // source which we are using a mic.
+        mRecorder.setAudioSource(MediaRecorder.AudioSource.MIC)
 
-            // below method is used to set the
-            // output file location for our recorded audio
-            mRecorder!!.setOutputFile(mFileName)
-            try {
-                // below method will prepare
-                // our audio recorder class
-                mRecorder!!.prepare()
-            } catch (e: IOException) {
-                Log.e("TAG", "prepare() failed")
-            }
-            // start method will start
-            // the audio recording.
-            mRecorder!!.start()
-            statusTV!!.text = "Recording Started"
-        } else {
-            // if audio recording permissions are
-            // not granted by user below method will
-            // ask for runtime permission for mic and storage.
-            RequestPermissions()
+        // below method is used to set // the output format of the audio.
+        mRecorder.setOutputFormat(MediaRecorder.OutputFormat.THREE_GPP)
+
+        // below method is used to set the
+        // audio encoder for our recorded audio.
+        mRecorder.setAudioEncoder(MediaRecorder.AudioEncoder.AMR_NB)
+
+        // below method is used to set the
+        // output file location for our recorded audio
+        mRecorder.setOutputFile(mFileName)
+        try {
+            Log.e("TAG", "92 success")
+            mRecorder.prepare()
+
+        } catch (e: IOException) {
+            Log.e("TAG", "95 failed")
         }
+        mRecorder.start()
+        statusTV!!.text = "Recording Started"
+    } else {
+        RequestPermissions()
     }
 
     override fun onRequestPermissionsResult(
@@ -194,7 +193,7 @@ class AudioCaptures : AppCompatActivity() {
         // below method will release
         // the media recorder class.
         mRecorder!!.release()
-        mRecorder = null
+       // mRecorder = null
         statusTV!!.text = "Recording Stopped"
     }
 
@@ -210,11 +209,5 @@ class AudioCaptures : AppCompatActivity() {
         statusTV!!.text = "Recording Play Stopped"
     }
 
-    companion object {
-        // string variable is created for storing a file name
-        private var mFileName: String? = null
 
-        // constant for storing audio permission
-        const val REQUEST_AUDIO_PERMISSION_CODE = 1
-    }
 }
