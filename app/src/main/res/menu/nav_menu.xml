@@ -41,6 +41,11 @@
         android:title="Bluetooth"
         android:icon="@drawable/ic_baseline_record_voice_over_24">
     </item>
+    <item
+        android:id="@+id/item9_DBSqLite"
+        android:title="DatabaseSQLIte"
+        android:icon="@drawable/ic_baseline_record_voice_over_24">
+    </item>
 
 
 </menu>

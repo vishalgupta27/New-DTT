@@ -20,8 +20,7 @@ import android.widget.Button
 import android.widget.ListView
 import android.widget.Toast
 import androidx.core.app.ActivityCompat.requestPermissions
-import java.io.InputStream
-import java.io.OutputStream
+
 
 class BluetoothCheck : Activity() {
     private val TAG = "BluetoothCheckTag"

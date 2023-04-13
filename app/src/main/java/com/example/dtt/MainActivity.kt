@@ -75,6 +75,11 @@ class MainActivity : AppCompatActivity() {
                     startActivity(intent)
                     true
                 }
+                R.id.item9_DBSqLite-> {
+                    val intent = Intent(this, DbSqLite::class.java)
+                    startActivity(intent)
+                    true
+                }
                 else -> {
                     drawer!!.closeDrawer(GravityCompat.START)
                     false
