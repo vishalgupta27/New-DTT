@@ -1,4 +1,4 @@
-package com.example.albums.utils
+package com.appdtt.dtt.utils
 
 
 import android.app.Activity
@@ -20,9 +20,7 @@ import com.android.volley.DefaultRetryPolicy
 import com.android.volley.toolbox.StringRequest
 import com.android.volley.toolbox.Volley
 import com.example.albums.utils.Constants.Companion.SERVER_TIMEOUT_TIME
-import com.example.dtt.R
-
-import java.lang.reflect.Method
+import com.example.albums.utils.VolleyCallback
 
 import java.util.regex.Matcher
 import java.util.regex.Pattern
@@ -108,17 +106,16 @@ object Utility {
         buttonbackground1.setTextColor(Color.RED)
     }
 
-     fun showAlertDialog(context: Context) {
+     fun showAlertDialog(context: Context, title: String?, message:String?) {
         val alertDialogBuilder = androidx.appcompat.app.AlertDialog.Builder(context)
-        alertDialogBuilder.setTitle("Alert Dialog")
+        alertDialogBuilder.setTitle(title)
         alertDialogBuilder.setCancelable(false)
-        alertDialogBuilder.setMessage("This is an example of AlertDialog in Kotlin.")
-        alertDialogBuilder.setPositiveButton("OK", DialogInterface.OnClickListener { dialog, which ->
+        alertDialogBuilder.setMessage(message)
+        alertDialogBuilder.setPositiveButton("OK") { dialog, _ ->
             // Do something when OK button is clicked
-            Toast.makeText(context, "Exit", Toast.LENGTH_SHORT).show()
             dialog.dismiss()
-        })
-        alertDialogBuilder.setNegativeButton("Cancel", DialogInterface.OnClickListener { dialog, which ->
+        }
+         alertDialogBuilder.setNegativeButton("Cancel", DialogInterface.OnClickListener { dialog, which ->
             // Do something when Cancel button is clicked
             dialog.dismiss()
         })

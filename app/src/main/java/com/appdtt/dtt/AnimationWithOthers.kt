@@ -1,4 +1,4 @@
-package com.example.dtt
+package com.appdtt.dtt
 
 import android.view.animation.AnimationUtils
 import android.annotation.SuppressLint
@@ -37,16 +37,16 @@ class AnimationWithOthers : AppCompatActivity() {
     @SuppressLint("MissingInflatedId", "CutPasteId")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_animation_with_others)
+        setContentView(com.appdtt.dtt.R.layout.activity_animation_with_others)
 
 
         // Copy button click listener Clipboard
-        val etText = findViewById<EditText>(R.id.etText)
-        val btnCopy = findViewById<Button>(R.id.btnCopy)
-        val btnPaste = findViewById<Button>(R.id.btnPaste)
+        val etText = findViewById<EditText>(com.appdtt.dtt.R.id.etText)
+        val btnCopy = findViewById<Button>(com.appdtt.dtt.R.id.btnCopy)
+        val btnPaste = findViewById<Button>(com.appdtt.dtt.R.id.btnPaste)
 
         // Set the custom font to the text view
-        etText.typeface = ResourcesCompat.getFont(this, R.font.poppins_bold)
+        etText.typeface = ResourcesCompat.getFont(this, com.appdtt.dtt.R.font.poppins_bold)
 
 
         // Copy button click listener
@@ -74,37 +74,43 @@ class AnimationWithOthers : AppCompatActivity() {
 
 // For Tween Animations  Start
         //val animImage = findViewById<ImageView>(R.id.images)
-        val animImage = findViewById<ImageView>(R.id.images)
-        val blink = findViewById<Button>(R.id.Blink)
-        val fade = findViewById<Button>(R.id.Fade)
-        val move = findViewById<Button>(R.id.Move)
-        val slide = findViewById<Button>(R.id.Slide)
-        val rotate = findViewById<Button>(R.id.Rotate)
-        val zoom = findViewById<Button>(R.id.Zoom)
-        val stop = findViewById<Button>(R.id.btn_stop)
+        val animImage = findViewById<ImageView>(com.appdtt.dtt.R.id.images)
+        val blink = findViewById<Button>(com.appdtt.dtt.R.id.Blink)
+        val fade = findViewById<Button>(com.appdtt.dtt.R.id.Fade)
+        val move = findViewById<Button>(com.appdtt.dtt.R.id.Move)
+        val slide = findViewById<Button>(com.appdtt.dtt.R.id.Slide)
+        val rotate = findViewById<Button>(com.appdtt.dtt.R.id.Rotate)
+        val zoom = findViewById<Button>(com.appdtt.dtt.R.id.Zoom)
+        val stop = findViewById<Button>(com.appdtt.dtt.R.id.btn_stop)
 
         blink.setOnClickListener {
-            val blinkanim = AnimationUtils.loadAnimation(this,R.anim.blink_animation)
+            val blinkanim = AnimationUtils.loadAnimation(this,
+                com.appdtt.dtt.R.anim.blink_animation
+            )
             animImage.startAnimation(blinkanim)
         }
         fade.setOnClickListener {
-            val fadeanim = AnimationUtils.loadAnimation(this,R.anim.fade_animation)
+            val fadeanim = AnimationUtils.loadAnimation(this, com.appdtt.dtt.R.anim.fade_animation)
             animImage.startAnimation(fadeanim)
         }
         move.setOnClickListener {
-            val moveanim = AnimationUtils.loadAnimation(this,R.anim.move_animation)
+            val moveanim = AnimationUtils.loadAnimation(this, com.appdtt.dtt.R.anim.move_animation)
             animImage.startAnimation(moveanim)
         }
         rotate.setOnClickListener {
-            val roatateanim = AnimationUtils.loadAnimation(this,R.anim.rotate_animation)
+            val roatateanim = AnimationUtils.loadAnimation(this,
+                com.appdtt.dtt.R.anim.rotate_animation
+            )
             animImage.startAnimation(roatateanim)
         }
         slide.setOnClickListener {
-            val slideanim = AnimationUtils.loadAnimation(this,R.anim.slide_animation)
+            val slideanim = AnimationUtils.loadAnimation(this,
+                com.appdtt.dtt.R.anim.slide_animation
+            )
             animImage.startAnimation(slideanim)
         }
         zoom.setOnClickListener {
-            val zoomanim = AnimationUtils.loadAnimation(this,R.anim.zoom_animation)
+            val zoomanim = AnimationUtils.loadAnimation(this, com.appdtt.dtt.R.anim.zoom_animation)
             animImage.startAnimation(zoomanim)
         }
         stop.setOnClickListener {
@@ -114,7 +120,7 @@ class AnimationWithOthers : AppCompatActivity() {
 
 
         // Set up UI
-        val recordButton = findViewById<Button>(R.id.Record)
+        val recordButton = findViewById<Button>(com.appdtt.dtt.R.id.Record)
         recordButton.setOnClickListener {
             if (isRecording) {
                 stopRecording()
@@ -125,14 +131,14 @@ class AnimationWithOthers : AppCompatActivity() {
             }
         }
 
-        val stopButton = findViewById<Button>(R.id.Stop)
+        val stopButton = findViewById<Button>(com.appdtt.dtt.R.id.Stop)
         stopButton.setOnClickListener {
             stopRecording()
-            val recordButton = findViewById<Button>(R.id.Record)
+            val recordButton = findViewById<Button>(com.appdtt.dtt.R.id.Record)
             recordButton.text = "Record"
         }
 
-        val playButton = findViewById<Button>(R.id.Play)
+        val playButton = findViewById<Button>(com.appdtt.dtt.R.id.Play)
         playButton.setOnClickListener {
             if (isPlaying) {
                 stopPlaying()
@@ -201,7 +207,7 @@ class AnimationWithOthers : AppCompatActivity() {
         grantResults: IntArray
     ) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults)
-        if (requestCode == REQUEST_RECORD_AUDIO_PERMISSION) {
+        if (requestCode == com.appdtt.dtt.AnimationWithOthers.Companion.REQUEST_RECORD_AUDIO_PERMISSION) {
             if (grantResults.isNotEmpty() && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
                 // Permission granted, do nothing
             } else {

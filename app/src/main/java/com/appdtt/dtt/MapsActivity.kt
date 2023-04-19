@@ -1,4 +1,4 @@
-package com.example.dtt
+package com.appdtt.dtt
 
 
 import android.Manifest.permission.ACCESS_COARSE_LOCATION

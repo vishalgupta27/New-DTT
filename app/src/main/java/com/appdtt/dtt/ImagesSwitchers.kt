@@ -1,4 +1,4 @@
-package com.example.dtt
+package com.appdtt.dtt
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle

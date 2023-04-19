@@ -1,4 +1,4 @@
-package com.example.dtt
+package com.appdtt.dtt
 
 import org.junit.Test
 

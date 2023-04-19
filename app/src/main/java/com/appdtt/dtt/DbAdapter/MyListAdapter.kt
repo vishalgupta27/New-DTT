@@ -1,11 +1,11 @@
-package com.example.dtt.DbAdapter
+package com.appdtt.dtt.DbAdapter
 
 import android.app.Activity
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ArrayAdapter
 import android.widget.TextView
-import com.example.dtt.R
+import com.appdtt.dtt.R
 
 class MyListAdapter(private val context: Activity, private val id: Array<String>, private val name: Array<String>, private val email: Array<String>)
     : ArrayAdapter<String>(context, R.layout.custom_list, name) {

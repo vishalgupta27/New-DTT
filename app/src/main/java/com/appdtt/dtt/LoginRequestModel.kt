@@ -1,4 +1,4 @@
-package com.example.dtt
+package com.appdtt.dtt
 
 
 import com.google.gson.annotations.SerializedName

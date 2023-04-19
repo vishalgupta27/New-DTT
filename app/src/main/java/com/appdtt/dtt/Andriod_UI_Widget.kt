@@ -1,4 +1,4 @@
-package com.example.dtt
+package com.appdtt.dtt
 
 import android.annotation.SuppressLint
 import android.content.DialogInterface
@@ -8,7 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.*
 import androidx.appcompat.app.AlertDialog
-import com.example.albums.utils.Utility
+import com.appdtt.dtt.utils.Utility
 
 class Andriod_UI_Widget : AppCompatActivity() {
 
@@ -24,7 +24,7 @@ class Andriod_UI_Widget : AppCompatActivity() {
         // Data for auto-completion
         val data = listOf("Java", "Kotlin", "XML", "Android")
         // Set up the AutoCompleteTextView
-        val autoCompleteTextView = findViewById<AutoCompleteTextView>(R.id.autoCompleteTextView)
+        val autoCompleteTextView = findViewById<AutoCompleteTextView>(com.appdtt.dtt.R.id.autoCompleteTextView)
         val adapter = ArrayAdapter(this, android.R.layout.simple_dropdown_item_1line, data)
         autoCompleteTextView.setAdapter(adapter)
 
@@ -37,9 +37,11 @@ class Andriod_UI_Widget : AppCompatActivity() {
 
         //2.For Spinner Code Start
         // Set up the spinner
-        val spinner = findViewById<Spinner>(R.id.spinner)
-        val adapters = ArrayAdapter(this,R.layout.spinner_item_layout,R.id.spinner_item_text, data)
-        adapter.setDropDownViewResource(R.layout.spinner_dropdown_layout)
+        val spinner = findViewById<Spinner>(com.appdtt.dtt.R.id.spinner)
+        val adapters = ArrayAdapter(this,
+            com.appdtt.dtt.R.layout.spinner_item_layout,
+            com.appdtt.dtt.R.id.spinner_item_text, data)
+        adapter.setDropDownViewResource(com.appdtt.dtt.R.layout.spinner_dropdown_layout)
         spinner.adapter = adapters
 
         // Set spinner width to match_parent
@@ -67,14 +69,14 @@ class Andriod_UI_Widget : AppCompatActivity() {
 
 
         //3. Set up the button click listener to show the AlertDialog
-        val button = findViewById<Button>(R.id.butoon)
+        val button = findViewById<Button>(com.appdtt.dtt.R.id.butoon)
         button.setOnClickListener {
-            Utility.showAlertDialog(this)
+            Utility.showAlertDialog(this,"Alert Title","This is dialog box")
         }  //3. Set up the button click listener to show the AlertDialog End Code
 
 
         //4. Set up the toggle button
-        val toggleButton = findViewById<ToggleButton>(R.id.toggleButton)
+        val toggleButton = findViewById<ToggleButton>(com.appdtt.dtt.R.id.toggleButton)
         toggleButton.setOnCheckedChangeListener { buttonView, isChecked ->
             if (isChecked) {
                 // Do something when toggle button is checked
@@ -87,9 +89,9 @@ class Andriod_UI_Widget : AppCompatActivity() {
 
 
         // Set up the checkbox
-        val pizza = findViewById<CheckBox>(R.id.pizza)
-        val burger = findViewById<CheckBox>(R.id.burger)
-        val order = findViewById<Button>(R.id.order)
+        val pizza = findViewById<CheckBox>(com.appdtt.dtt.R.id.pizza)
+        val burger = findViewById<CheckBox>(com.appdtt.dtt.R.id.burger)
+        val order = findViewById<Button>(com.appdtt.dtt.R.id.order)
         order.setOnClickListener { view ->
             var totalAmount = 0
             val result = StringBuilder()
@@ -109,9 +111,9 @@ class Andriod_UI_Widget : AppCompatActivity() {
 
 
         //For RadioButton Code Setup
-        val radioGroup = findViewById<RadioGroup>(R.id.RadioGroup)
-        val male = findViewById<RadioButton>(R.id.Male)
-        val female = findViewById<RadioButton>(R.id.Female)
+        val radioGroup = findViewById<RadioGroup>(com.appdtt.dtt.R.id.RadioGroup)
+        val male = findViewById<RadioButton>(com.appdtt.dtt.R.id.Male)
+        val female = findViewById<RadioButton>(com.appdtt.dtt.R.id.Female)
 
         radioGroup.setOnCheckedChangeListener { group, checkedId ->
             if (male.isChecked){
@@ -129,9 +131,9 @@ class Andriod_UI_Widget : AppCompatActivity() {
         radioGroup.orientation = RadioGroup.VERTICAL
 
         // Create dynamic radio buttons
-        val radioGroup2 = findViewById<RadioGroup>(R.id.radioGroup2)
-        val linearLayout = findViewById<LinearLayout>(R.id.linearLayout)
-        val submitButton = findViewById<Button>(R.id.submitButton)
+        val radioGroup2 = findViewById<RadioGroup>(com.appdtt.dtt.R.id.radioGroup2)
+        val linearLayout = findViewById<LinearLayout>(com.appdtt.dtt.R.id.linearLayout)
+        val submitButton = findViewById<Button>(com.appdtt.dtt.R.id.submitButton)
 
         // Dynamically create radio buttons
         for (item in items) {

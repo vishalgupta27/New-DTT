@@ -142,8 +142,9 @@
                         android:textStyle="normal" />
                 </com.google.android.material.textfield.TextInputLayout>
                 <TextView
+                    android:id="@+id/reset"
                     android:textSize="11sp"
-                    android:text="Forget Password?"
+                    android:text="Forgot Password?"
                     android:textAlignment="textEnd"
                     android:textColor="#616161"
                     android:textStyle="normal"
@@ -291,13 +292,15 @@
                 android:layout_marginBottom="20dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
-                <ImageView
-                    android:src="@drawable/facebook"
+                <TextView
+                    android:id="@+id/signfacebook"
+                    android:background="@drawable/facebook"
                     android:layout_margin="10dp"
                     android:layout_width="35dp"
                     android:layout_height="35dp"/>
-                <ImageView
-                    android:src="@drawable/google"
+                <TextView
+                    android:id="@+id/signgoogle"
+                    android:background="@drawable/google"
                     android:layout_margin="10dp"
                     android:layout_width="35dp"
                     android:layout_height="35dp"/>

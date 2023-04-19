@@ -1,4 +1,4 @@
-package com.example.dtt
+package com.appdtt.dtt
 import android.annotation.SuppressLint
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -8,9 +8,9 @@ import android.content.DialogInterface
 import android.view.View
 import android.widget.ListView
 import androidx.appcompat.app.AlertDialog
-import com.example.dtt.DbAdapter.MyListAdapter
-import com.example.dtt.dbHandler.DatabaseHandler
-import com.example.dtt.dbModel.EmpModelClass
+import com.appdtt.dtt.DbAdapter.MyListAdapter
+import com.appdtt.dtt.dbHandler.DatabaseHandler
+import com.appdtt.dtt.dbModel.EmpModelClass
 
 
 class DbSqLite : AppCompatActivity() {

@@ -1,33 +1,41 @@
 {
   "project_info": {
-    "project_number": "172317559477",
-    "project_id": "dtt-app-1cb75",
-    "storage_bucket": "dtt-app-1cb75.appspot.com"
+    "project_number": "1050424770723",
+    "project_id": "dtt-app-383006",
+    "storage_bucket": "dtt-app-383006.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:172317559477:android:6fad497a51f5edf5f24cfc",
+        "mobilesdk_app_id": "1:1050424770723:android:3eedc4f9b7ca1688e7bf16",
         "android_client_info": {
-          "package_name": "com.example.dtt"
+          "package_name": "com.appdtt.dtt"
         }
       },
       "oauth_client": [
         {
-          "client_id": "172317559477-gri1uvljlioosage7h6tniblrb321haj.apps.googleusercontent.com",
+          "client_id": "1050424770723-jn9i3i4pl5f0eh188scib6mdo3spb6vh.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.appdtt.dtt",
+            "certificate_hash": "62c77481e2ac1692c6bab786aee3768004b58f3f"
+          }
+        },
+        {
+          "client_id": "1050424770723-dfdf0eg8ue7t42atpd2ruvcd4fiq66bg.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyARoD2pKPbwbs0Y2uVbicw_iWz3uuAMvlk"
+          "current_key": "AIzaSyDzSloi7gj5d_OiPaxxGU0kWY_ZY8lpy5s"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "172317559477-gri1uvljlioosage7h6tniblrb321haj.apps.googleusercontent.com",
+              "client_id": "1050424770723-dfdf0eg8ue7t42atpd2ruvcd4fiq66bg.apps.googleusercontent.com",
               "client_type": 3
             }
           ]
