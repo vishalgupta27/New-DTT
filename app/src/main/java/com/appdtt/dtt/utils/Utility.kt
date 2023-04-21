@@ -14,13 +14,11 @@ import android.os.Environment
 import android.provider.DocumentsContract
 import android.provider.MediaStore
 import android.util.Log
-import android.widget.Toast
 
 import com.android.volley.DefaultRetryPolicy
 import com.android.volley.toolbox.StringRequest
 import com.android.volley.toolbox.Volley
-import com.example.albums.utils.Constants.Companion.SERVER_TIMEOUT_TIME
-import com.example.albums.utils.VolleyCallback
+import com.appdtt.dtt.utils.Constants.Companion.SERVER_TIMEOUT_TIME
 
 import java.util.regex.Matcher
 import java.util.regex.Pattern

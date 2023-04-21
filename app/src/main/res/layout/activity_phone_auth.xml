@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp">
+
+    <TextView
+        android:id="@+id/text_view_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Login with number"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="32dp" />
+
+    <EditText
+        android:id="@+id/edit_text_phone_number"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter phone number (10 digits)"
+        android:inputType="phone"
+        android:maxLength="10"
+        android:textSize="18sp"
+        android:layout_below="@id/text_view_title" />
+
+    <Button
+        android:id="@+id/button_send_code"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Send code"
+        android:textSize="18sp"
+        android:layout_below="@id/edit_text_phone_number"
+        android:layout_marginTop="16dp"
+        android:layout_centerHorizontal="true" />
+
+    <EditText
+        android:id="@+id/edit_text_verification_code"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter verification code"
+        android:inputType="number"
+        android:textSize="18sp"
+        android:layout_below="@id/button_send_code"
+        android:layout_marginTop="32dp"
+        android:layout_centerHorizontal="true" />
+
+    <Button
+        android:id="@+id/button_verify_code"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Verify code"
+        android:textSize="18sp"
+        android:layout_below="@id/edit_text_verification_code"
+        android:layout_marginTop="16dp"
+        android:layout_centerHorizontal="true" />
+
+</RelativeLayout>

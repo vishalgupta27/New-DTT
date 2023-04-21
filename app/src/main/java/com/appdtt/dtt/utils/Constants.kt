@@ -1,4 +1,4 @@
-package com.example.albums.utils
+package com.appdtt.dtt.utils
 
 class  Constants {
     companion object {

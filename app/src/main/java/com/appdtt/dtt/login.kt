@@ -74,6 +74,7 @@ class login : AppCompatActivity() {
         eMails = findViewById(R.id.eMails)
         eMail = findViewById(R.id.eMail)
         passwords = findViewById(R.id.passwords)
+       val iv_phone = findViewById<ImageView>(R.id.iv_phone)
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
             KeysHashUtility.getKeys(this)
@@ -82,6 +83,11 @@ class login : AppCompatActivity() {
          val forgotpswd = findViewById<TextView>(R.id.reset)
         forgotpswd.setOnClickListener {
            val intent = Intent(this@login,forgotpassword::class.java)
+            startActivity(intent)
+        }
+
+        iv_phone.setOnClickListener {
+            val intent = Intent(this,PhoneAuth::class.java)
             startActivity(intent)
         }
 
@@ -170,7 +176,6 @@ class login : AppCompatActivity() {
         firebaseAuth = FirebaseAuth.getInstance()
 
         signgoogle.setOnClickListener { view: View? ->
-            Toast.makeText(this, "Logging In", Toast.LENGTH_SHORT).show()
             signInGoogle()
         }
 
@@ -254,7 +259,7 @@ class login : AppCompatActivity() {
             Toast.makeText(this, "Enter Confirm Password", Toast.LENGTH_SHORT).show()
             return
         }
-        if (!passwords01!!.text.toString().equals(passwordss!!.text.toString())) {
+        if (passwords01!!.text.toString() != passwordss!!.text.toString()) {
             Toast.makeText(this, "Password do not match", Toast.LENGTH_SHORT).show()
             return
         }
